@@ -41,7 +41,7 @@ public class CityService {
             repository.findById(id);
             repository.deleteById(id);
         }catch (EmptyResultDataAccessException e) {
-            throw new ApiException();
+            throw new EmptyResultDataAccessException(0);
         }catch (DataIntegrityViolationException e){
             throw new ApiException();
         }catch (IllegalArgumentException e){
